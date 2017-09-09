@@ -2,23 +2,25 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class RepositoryServiceProvider extends ServiceProvider
 {
+    protected static $repositories = [
+
+    ];
     /**
-     * Bootstrap any application services.
+     * Bootstrap the application services.
      *
      * @return void
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+        //
     }
 
     /**
-     * Register any application services.
+     * Register the application services.
      *
      * @return void
      */

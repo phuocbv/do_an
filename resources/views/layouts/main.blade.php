@@ -20,8 +20,8 @@
                     <img src="{{ url('img/icon-soict.png') }}">
                 </div>
                 <div class="col-md-6" style="padding-top: 75px">
-                    <div class="LGB" style="font-size: 1.3em">VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG</div>
-                    <div class="MGB">HỆ THỐNG QUẢN LÝ THỰC TẬP</div>
+                    <div class="institute-name" style="font-size: 1.3em">VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG</div>
+                    <div class="manage-system">HỆ THỐNG QUẢN LÝ THỰC TẬP</div>
                 </div>
             </div>
 
@@ -104,7 +104,19 @@
                                 <li><a href="#">View all</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Gioi</a></li>
+                        <li class="dropdown list-category">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" 
+                                role="button" aria-haspopup="true" aria-expanded="false">Gioi</a>
+                            <ul class="dropdown-menu mega-dropdown-menu">
+                                <li><a href="#">Cushion</a></li>
+                                <li><a href="#">Bath</a></li>
+                                <li><a href="#">Air Conditioner</a></li>
+                                <li><a href="#">Radiator</a></li>
+                                <li><a href="#">Washing Machine</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">View all</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Products</a></li>
                         <li><a href="#">Latest News</a></li>
                         <li><a href="#">Contacts</a></li>
