@@ -31,6 +31,10 @@ div.info-item div.title-info {
     font-size: 1.5em;
 }
 
+.navbar-nav > li > .dropdown-menu {
+    border-radius: 0; 
+}
+
 .view-data {
     font-family: "Times New Roman", Times, serif;
 }
