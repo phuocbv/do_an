@@ -1,0 +1,36 @@
+.header, .footer {
+    width: 100%;
+    height: 50px;
+    background: #56a3ba;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.content {
+    min-height: 95.5vh;
+    background: #fff;
+    margin-top: -25px;
+    z-index: 1;
+    box-shadow: 0 0 3px #9e9999;
+}
+
+.breadcrumb {
+    margin-top: 10px;
+    border-radius: 0;
+    background: #d4d8e0; 
+}
+
+.breadcrumb > li + li:before {
+    color: #5b5656;
+}
+
+div.info-item div.title-info {
+    font-size: 1.5em;
+}
+
+.view-data {
+    font-family: "Times New Roman", Times, serif;
+}

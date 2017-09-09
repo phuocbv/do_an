@@ -1,0 +1,50 @@
+ .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #575254;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #adabab;
+}
+
+.mega-nav {
+    background: rgb(12, 61, 75);
+    border-radius: 0;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.mega-nav.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    transition: all 200ms ease-out;
+    -webkit-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+}
+
+.mega-nav.navbar-default .navbar-nav > li > a:hover {
+    background: rgb(32, 120, 145);
+}
+
+.mega-nav.navbar-default .navbar-nav > li.dropdown > a:hover,
+.mega-nav.navbar-default .navbar-nav > li.dropdown > a:focus,
+.mega-nav.navbar-default .navbar-nav > li.dropdown > a:active {
+    background: rgb(32, 120, 145);
+    color: #fff;
+}
+
+#main-menu {
+    padding-left: 0;
+}
+
+#main-menu .menu-list li {
+    transition: all 200ms ease-out;
+    -webkit-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+}
+
+#main-menu .menu-list li + li {
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.mega-nav.navbar-default .navbar-nav > li.menu-list .list-category a {
+    color: #333;
+}
