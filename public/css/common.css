@@ -7,20 +7,77 @@
 .footer {
     position: absolute;
     bottom: 0;
+    z-index: -1;
 }
 
 .content {
     min-height: 95.5vh;
     background: #fff;
     margin-top: -25px;
-    z-index: 1;
+    /*z-index: 1;*/
     box-shadow: 0 0 3px #9e9999;
+}
+
+.current-account {
+    text-align: right;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+.current-account .name-account {
+    margin: 10px 10px 0 0;
+    font-size: 1.1em;
 }
 
 .breadcrumb {
     margin-top: 10px;
     border-radius: 0;
     background: #d4d8e0; 
+}
+
+.button-social {
+    margin-top: 7px;
+}
+
+.button-social-face {
+    background-image: url(/img/face.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 40px;
+    height: 40px;
+    background-position: 50% center;
+    background-color: #1ea3c4;
+    border: none;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+
+.button-social-google {
+    background-image: url(/img/gg.png);
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    width: 40px;
+    height: 40px;
+    background-position: 50% center;
+    background-color: #1ea3c4;
+    border: none;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+
+.button-social-twitter {
+    background-image: url(/img/twitter.png);
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    width: 40px;
+    height: 40px;
+    background-position: 50% center;
+    background-color: #1ea3c4;
+    border: none;
+    border-radius: 100%;
+    margin-right: 15px;
 }
 
 .breadcrumb > li + li:before {
@@ -31,8 +88,21 @@ div.info-item div.title-info {
     font-size: 1.5em;
 }
 
+.image-home {
+    text-align: right;
+    padding-top: 10px;
+}
+
 .navbar-nav > li > .dropdown-menu {
     border-radius: 0; 
+}
+
+.system-name {
+    padding-top: 75px;
+}
+
+.system-name .institute-name {
+    font-size: 1.3em;
 }
 
 .view-data {

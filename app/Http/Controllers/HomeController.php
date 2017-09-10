@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Contracts\NewsRepositoryInterface;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,9 +12,12 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    private $newsRepository;
+
+    public function __construct(NewsRepositoryInterface $newsRepository)
     {
         $this->middleware('auth');
+        $this->newsRepository = $newsRepository;
     }
 
     /**
@@ -23,6 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $listNews = $this->newsRepository->getListNews();
+
+        return view('home')->with([
+            'listNews' => $listNews
+        ]);
     }
 }

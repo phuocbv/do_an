@@ -49,17 +49,17 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     public function findBy($column, $option)
     {
-        return $this->model->where($column, $option)->get();
+        return $this->model->where($column, $option);
     }
 
     public function findWhere($array = [], $column = ['*'])
     {
-        return $this->model->where($array)->get($column);
+        return $this->model->where($array);
     }
 
     public function findWhereIn($field, $array = [], $column = ['*'])
     {
-        return $this->model->whereIn($field, $array)->get($column);
+        return $this->model->whereIn($field, $array);
     }
 
     public function paginate($limit)

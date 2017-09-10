@@ -1,22 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
-<div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url('/') }}">Trang chủ</a></li>
+            </ol>
+        </div>
+        <div class="col-md-12 view-data">
+            @foreach($listNews as $value)
+                <div class="info-item col-md-12">
+                    <div class="title-info">
+                        <a href="">{{ $value->title }}</a>
+                    </div>
+                    <div class="time-info">
+                        {{ $value->created_at->format('d/m/Y') }}
+                    </div><hr>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
