@@ -11,11 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    return view('home1');
-});
+Route::get('/', [
+    'uses' => 'HomeController@index',
+    'as' => 'home'
+]);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin', 'as' => 'admin.'], function() {
+    Route::get('listInternship', [
+        'uses' => 'ManageInternshipController@getListInternship',
+        'as' => 'listInternship'
+    ]);
+    Route::get('listPlanStudy', [
+        'uses' => 'ManageInternshipController@getListPlanStudy',
+        'as' => 'listPlanStudy'
+    ]);
+});
