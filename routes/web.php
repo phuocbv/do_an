@@ -21,12 +21,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin', 'as' => 'admin.'], function() {
-    Route::get('listInternship', [
-        'uses' => 'ManageInternshipController@getListInternship',
-        'as' => 'listInternship'
-    ]);
+//    Route::get('listInternship', [
+//        'uses' => 'ManageInternshipController@getListInternship',
+//        'as' => 'listInternship'
+//    ]);
     Route::get('listPlanStudy', [
-        'uses' => 'ManageInternshipController@getListPlanStudy',
+        'uses' => 'ManageInternshipController@getViewListPlanStudy',
         'as' => 'listPlanStudy'
+    ]);
+
+    Route::get('getDataListPlanStudy', [
+        'uses' => 'ManageInternshipController@getDataListPlanStudy',
+        'as' => 'getDataListPlanStudy'
     ]);
 });

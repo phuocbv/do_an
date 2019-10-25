@@ -16,9 +16,9 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::guest() || Auth::user()->role != config('settings.role.admin')) {
-            return redirect('/');
-        }
+//        if (Auth::guest() || Auth::user()->role != config('settings.role.admin')) {
+//            return redirect('/');
+//        }
         return $next($request);
     }
 }

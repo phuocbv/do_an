@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/common.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/datatables/media/css/jquery.dataTables.css') }}">
     @yield('style')
 </head>
 <body>
@@ -24,6 +25,7 @@
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('bower_components/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ asset('bower_components/datatables/media/js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('js/header.js') }}"></script>
     @yield('script')
 </body>

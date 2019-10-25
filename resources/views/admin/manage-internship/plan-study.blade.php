@@ -15,31 +15,16 @@
                     Kế hoạch học tập
                 </div>
                 <div class="panel-body">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="table-semester">
                         <thead>
-                        <tr>
-                            <th>STT</th>
-                            <th>Học kì</th>
-                            <th>Ngày bắt đầu</th>
-                            <th>Ngày kết thúc</th>
-                            <th></th>
-                        </tr>
+                            <tr>
+                                <th>STT</th>
+                                <th>Học kì</th>
+                                {{--<th>Ngày bắt đầu</th>--}}
+                                {{--<th>Ngày kết thúc</th>--}}
+                                {{--<th>Edit</th>--}}
+                            </tr>
                         </thead>
-                        <tbody>
-                            @php
-                                $i = 1;
-                            @endphp
-
-                            @foreach ($listSemester as $value)
-                                <tr>
-                                    <th scope="row">{{ $i++ }}</th>
-                                    <td>{{ $value->name }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($value->start)->format(config('settings.format_date_view')) }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($value->finish)->format(config('settings.format_date_view')) }}</td>
-                                    <td>@</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -68,4 +53,62 @@
         </div>
         <!-- Modal create semester-->
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(function() {
+            var table = $('#table-semester').DataTable({
+                processing: true,
+                serverSide: true,
+                pageLength: 20,
+                {{--ajax: '{!! route('admin.getDataListPlanStudy') !!}',--}}
+                ajax:{
+                    url: '{!! route('admin.getDataListPlanStudy') !!}',
+                    data: {
+                        to: 'a',
+                        from: 'b'
+                    }
+                },
+                columns: [
+                    {
+                        data: 'tid',
+                        name: 'tid',
+//                        render: function (data) {
+//                            if (data == 1) {
+//                                return "MOT"
+//                            } else {
+//                                return data;
+//                            }
+//                        }
+                    },
+                    { data: 'tracking', name: 'tracking' }
+//                    {
+//                        data: 'start',
+//                        name: 'start',
+//                        render: function(data) {
+//                            var date = new Date(data);
+//                            var month = date.getMonth() + 1;
+//                            return date.getDate() + '/' + (month.length > 1 ? month : '0' + month) + '/' + date.getFullYear();
+//                        }
+//                    },
+//                    {
+//                        data: 'finish',
+//                        name: 'finish ' ,
+//                        render: function(data) {
+//                            var date = new Date(data);
+//                            var month = date.getMonth() + 1;
+//                            return date.getDate() + '/' + (month.length > 1 ? month : '0' + month) + '/' + date.getFullYear();
+//                        }
+//                    },
+//                    { defaultContent: '<button class="edit">Click{id}</button>'}
+                ]
+            });
+
+            $('#table-semester tbody').on('click', 'button.edit', function () {
+                var data = table.row($(this).parents('tr')).data();
+                console.log(data);
+            } );
+        });
+    </script>
 @endsection
